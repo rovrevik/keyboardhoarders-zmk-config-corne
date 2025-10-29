@@ -61,6 +61,8 @@
             label = "TD_SPACE";
             #binding-cells = <0>;
             bindings = <&lt 2 SPACE>, <&key_repeat>;
+
+            tapping-term-ms = <250>;
         };
 
         td_ret: td_ret {
@@ -68,6 +70,8 @@
             label = "TD_RET";
             #binding-cells = <0>;
             bindings = <&kp RET>, <&key_repeat>;
+
+            tapping-term-ms = <250>;
         };
 
         td_bspc: td_bspc {
@@ -75,6 +79,8 @@
             label = "TD_BSPC";
             #binding-cells = <0>;
             bindings = <&lt 1 BSPC>, <&key_repeat>;
+
+            tapping-term-ms = <250>;
         };
     };
 
