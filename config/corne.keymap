@@ -217,45 +217,45 @@
     combos {
         compatible = "zmk,combos";
 
-        escape {
-            bindings = <&kp ESCAPE>;
-            key-positions = <13 29>;
-        };
+        // escape {
+        //     bindings = <&kp ESCAPE>;
+        //     key-positions = <13 29>;
+        // };
 
-        delete {
-            bindings = <&kp DELETE>;
-            key-positions = <15 21>;
-        };
+        // delete {
+        //     bindings = <&kp DELETE>;
+        //     key-positions = <15 21>;
+        // };
 
         perc {
             bindings = <&kp PERCENT>;
             key-positions = <5 17>;
         };
 
-        equal {
-            bindings = <&kp EQUAL>;
-            key-positions = <28 16>;
-        };
+        // equal {
+        //     bindings = <&kp EQUAL>;
+        //     key-positions = <28 16>;
+        // };
 
-        dollar {
-            bindings = <&kp DOLLAR>;
-            key-positions = <4 16>;
-        };
+        // dollar {
+        //     bindings = <&kp DOLLAR>;
+        //     key-positions = <4 16>;
+        // };
 
-        pound {
-            bindings = <&kp POUND>;
-            key-positions = <3 15>;
-        };
+        // pound {
+        //     bindings = <&kp POUND>;
+        //     key-positions = <3 15>;
+        // };
 
-        at {
-            bindings = <&kp AT>;
-            key-positions = <2 14>;
-        };
+        // at {
+        //     bindings = <&kp AT>;
+        //     key-positions = <2 14>;
+        // };
 
-        backslash {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <26 14>;
-        };
+        // backslash {
+        //     bindings = <&kp BACKSLASH>;
+        //     key-positions = <26 14>;
+        // };
 
         copy {
             bindings = <&kp K_COPY>;
@@ -267,25 +267,25 @@
             key-positions = <26 27>;
         };
 
-        star {
-            bindings = <&kp STAR>;
-            key-positions = <8 20>;
-        };
+        // star {
+        //     bindings = <&kp STAR>;
+        //     key-positions = <8 20>;
+        // };
 
-        slash {
-            bindings = <&kp SLASH>;
-            key-positions = <32 20>;
-        };
+        // slash {
+        //     bindings = <&kp SLASH>;
+        //     key-positions = <32 20>;
+        // };
 
-        plus {
-            bindings = <&kp PLUS>;
-            key-positions = <7 19>;
-        };
+        // plus {
+        //     bindings = <&kp PLUS>;
+        //     key-positions = <7 19>;
+        // };
 
-        minus {
-            bindings = <&kp KP_MINUS>;
-            key-positions = <31 19>;
-        };
+        // minus {
+        //     bindings = <&kp KP_MINUS>;
+        //     key-positions = <31 19>;
+        // };
 
         underscore {
             bindings = <&kp UNDER>;
@@ -302,15 +302,15 @@
             key-positions = <33 32>;
         };
 
-        para-less {
-            bindings = <&paraless>;
-            key-positions = <20 19>;
-        };
+        // para-less {
+        //     bindings = <&paraless>;
+        //     key-positions = <20 19>;
+        // };
 
-        para-great {
-            bindings = <&paragreat>;
-            key-positions = <20 21>;
-        };
+        // para-great {
+        //     bindings = <&paragreat>;
+        //     key-positions = <20 21>;
+        // };
     };
 
     //
