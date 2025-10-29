@@ -24,6 +24,111 @@
             global-quick-tap;
         };
 
+        // Homerow Mod for the left index finger - TailorKey.
+        // For advanced tuning of HRM values, see: https://docs.google.com/spreadsheets/d/1ESgObQelyz4lnKlfwLYsmofLJulOMK5RdGBsopLe2o8
+        hml_i: hml_index_rlo {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <340>;
+            bindings = <&kp>, <&kp>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <450>;
+            require-prior-idle-ms = <250>;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+            hold-trigger-on-release;
+        };
+
+        // Homerow Mod for the left middle finger - TailorKey
+        hml_m: hml_middle_rlo {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <360>;
+            bindings = <&kp>, <&kp>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <450>;
+            require-prior-idle-ms = <300>;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+            hold-trigger-on-release;
+        };
+
+        // Homerow Mod for the left ring finger 1 - TailorKey
+        hml_r: hml_ring_rlo {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <390>;
+            bindings = <&kp>, <&kp>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <450>;
+            require-prior-idle-ms = <300>;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+            hold-trigger-on-release;
+        };
+
+        // Homerow Mod for the left pinky - TailorKey
+        hml_p: hml_pinky_rlo {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <430>;
+            bindings = <&kp>, <&kp>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <450>;
+            require-prior-idle-ms = <300>;
+            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+            hold-trigger-on-release;
+        };
+
+        // Homerow Mod for the right index finger - TailorKey
+        hmr_i: hmr_index_rlo {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <340>;
+            bindings = <&kp>, <&kp>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <450>;
+            require-prior-idle-ms = <250>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+            hold-trigger-on-release;
+        };
+
+        // Homerow Mod for the right middle finger - TailorKey
+        hmr_m: hmr_middle_rlo {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <360>;
+            bindings = <&kp>, <&kp>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <450>;
+            require-prior-idle-ms = <300>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+            hold-trigger-on-release;
+        };
+
+        // Homerow Mod for the right ring 1 - TailorKey
+        hmr_r: hmr_ring_rlo{
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <390>;
+            bindings = <&kp>, <&kp>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <450>;
+            require-prior-idle-ms = <300>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+            hold-trigger-on-release;
+        };
+
+        // Homerow Mod for the right pinky - TailorKey
+        hmr_p: hmr_pinky_rlo {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <430>;
+            bindings = <&kp>, <&kp>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <450>;
+            require-prior-idle-ms = <300>;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
+            hold-trigger-on-release;
+        };
+
         para: para {
             compatible = "zmk,behavior-tap-dance";
             label = "PARA";
@@ -56,40 +161,40 @@
             mods = <(MOD_LSFT)>;
         };
 
-        td_space: td_space {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_SPACE";
-            #binding-cells = <0>;
-            bindings = <&lt 2 SPACE>, <&key_repeat>;
+        // td_space: td_space_rlo {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     label = "TD_SPACE_RLO";
+        //     #binding-cells = <0>;
+        //     bindings = <&lt 2 SPACE>, <&key_repeat>;
 
-            tapping-term-ms = <350>;
-        };
+        //     tapping-term-ms = <350>;
+        // };
 
-        td_ret: td_ret {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_RET";
-            #binding-cells = <0>;
-            bindings = <&kp RET>, <&key_repeat>;
+        // td_ret: td_ret_rlo {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     label = "TD_RET_RLO";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp RET>, <&key_repeat>;
 
-            tapping-term-ms = <350>;
-        };
+        //     tapping-term-ms = <350>;
+        // };
 
-        td_bspc: td_bspc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_BSPC";
-            #binding-cells = <0>;
-            bindings = <&lt 1 BSPC>, <&key_repeat>;
+        // td_bspc: td_bspc_rlo {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     label = "TD_BSPC_RLO";
+        //     #binding-cells = <0>;
+        //     bindings = <&lt 1 BSPC>, <&key_repeat>;
 
-            tapping-term-ms = <350>;
-        };
+        //     tapping-term-ms = <350>;
+        // };
 
-        thumb_ht: thumb_ht {
+        ht_thumb: ht_thumb_rlo {
             compatible = "zmk,behavior-hold-tap";
-            label = "THUMB_HT";
+            label = "HT_THUMB_RLO";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <300>;
             flavor = "balanced";
             quick-tap-ms = <400>;
         };
@@ -216,6 +321,12 @@
         DEF {
             display-name = "Base";
 
+            // | Left Half:                  |      | Right Half:                 |
+            // |  0 |  1 |  2 |  3 |  4 |  5 |      |  6 |  7 |  8 |  9 | 10 | 11 |
+            // | 12 | 13 | 14 | 15 | 16 | 17 |      | 18 | 19 | 20 | 21 | 22 | 23 |
+            // | 24 | 25 | 26 | 27 | 28 | 29 |      | 30 | 31 | 32 | 33 | 34 | 35 |
+            // |    |    |    | 36 | 37 | 38 |      | 39 | 40 | 41 |    |    |    |
+
             // -----------------------------------------------------------------------------------------
             // |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |
             // |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |
@@ -223,10 +334,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB    &kp Q        &kp W       &kp E       &kp R        &kp T     &kp Y    &kp U        &kp I       &kp O       &kp P           &kp MINUS
-&kp ESC    &hm LCTRL A  &hm LALT S  &hm LGUI D  &hm LSHFT F  &kp G     &kp H    &hm RSHFT J  &hm RGUI K  &hm RALT L  &hm LCTRL SEMI  &kp SQT
-&kp GRAVE  &kp Z        &kp X       &kp C       &kp V        &kp B     &kp N    &kp M        &kp COMMA   &kp DOT     &kp FSLH        &trans
-                                    &trans      &td_bspc     &trans    &td_ret  &td_space    &trans
+&kp TAB     &kp Q           &kp W           &kp E           &kp R               &kp T     &kp Y     &kp U               &kp I           &kp O           &kp P               &kp MINUS
+&kp ESC     &hml_i LCTRL A  &hml_m LALT S   &hml_r LGUI D   &hml_p LSHFT F      &kp G     &kp H     &hmr_i RSHFT J      &hmr_m RGUI K   &hmr_r RALT L   &hmr_p LCTRL SEMI   &kp SQT
+&kp GRAVE   &kp Z           &kp X           &kp C           &kp V               &kp B     &kp N     &kp M               &kp COMMA       &kp DOT         &kp FSLH            &trans
+                                            &trans          &ht_thumb 1 BSPC    &trans    &kp RET   &ht_thumb 2 SPACE   &trans
             >;
         };
 
