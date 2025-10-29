@@ -55,6 +55,27 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        td_space: td_space {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SPACE";
+            #binding-cells = <0>;
+            bindings = <&lt 2 SPACE>, <&key_repeat>;
+        };
+
+        td_ret: td_ret {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_RET";
+            #binding-cells = <0>;
+            bindings = <&kp RET>, <&key_repeat>;
+        };
+
+        td_bspc: td_bspc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_BSPC";
+            #binding-cells = <0>;
+            bindings = <&lt 1 BSPC>, <&key_repeat>;
+        };
     };
 
     macros {
@@ -188,7 +209,7 @@
 &kp TAB    &kp Q        &kp W       &kp E       &kp R        &kp T     &kp Y    &kp U        &kp I       &kp O       &kp P           &kp BACKSPACE
 &kp LSHFT  &hm LCTRL A  &hm LALT S  &hm LGUI D  &hm LSHFT F  &kp G     &kp H    &hm RSHFT J  &hm RGUI K  &hm RALT L  &hm LCTRL SEMI  &kp SQT
 &kp LCTRL  &kp Z        &kp X       &kp C       &kp V        &kp B     &kp N    &kp M        &kp COMMA   &kp DOT     &kp FSLH        &kp RSHFT
-                                    &trans      &lt 1 BSPC   &trans    &kp RET  &lt 2 SPACE  &trans
+                                    &trans      &td_bspc     &trans    &td_ret  &td_space    &trans
             >;
         };
 
