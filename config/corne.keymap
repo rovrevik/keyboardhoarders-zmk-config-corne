@@ -8,7 +8,7 @@
 #define SYM 2
 #define ADJ 3
 #define EXTRA 4
-#define NAV_RLO 5
+#define CURSOR_RLO 5
 
 / {
     behaviors {
@@ -335,10 +335,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB     &kp Q           &kp W           &kp E           &kp R                   &kp T     &kp Y     &kp U               &kp I           &kp O           &kp P               &kp MINUS
-&kp ESC     &hml_i LCTRL A  &hml_m LALT S   &hml_r LGUI D   &hml_p LSHFT F          &kp G     &kp H     &hmr_i RSHFT J      &hmr_m RGUI K   &hmr_r RALT L   &hmr_p LCTRL SEMI   &kp SQT
-&kp GRAVE   &kp Z           &kp X           &kp C           &kp V                   &kp B     &kp N     &kp M               &kp COMMA       &kp DOT         &kp FSLH            &trans
-                                            &trans          &ht_thumb NAV_RLO BSPC  &kp DEL   &kp RET   &ht_thumb SYM SPACE &trans
+&kp TAB     &kp Q           &kp W           &kp E           &kp R                       &kp T     &kp Y     &kp U               &kp I           &kp O           &kp P               &kp MINUS
+&kp ESC     &hml_i LCTRL A  &hml_m LALT S   &hml_r LGUI D   &hml_p LSHFT F              &kp G     &kp H     &hmr_i RSHFT J      &hmr_m RGUI K   &hmr_r RALT L   &hmr_p LCTRL SEMI   &kp SQT
+&kp GRAVE   &kp Z           &kp X           &kp C           &kp V                       &kp B     &kp N     &kp M               &kp COMMA       &kp DOT         &kp FSLH            &trans
+                                            &trans          &ht_thumb CURSOR_RLO BSPC   &kp DEL   &kp RET   &ht_thumb SYM SPACE &trans
             >;
         };
 
@@ -396,8 +396,8 @@
             >;
         };
 
-         NAV_RLO {
-            display-name = "NavNumRlo";
+         CURSOR_RLO {
+            display-name = "Cursor";
             bindings = <
 &trans      &kp N1  &kp N2    &kp N3    &kp N4      &kp N5      &kp N6  &kp N7      &kp N8      &kp N9      &kp N0      &trans
 &caps_word  &trans  &trans    &kp UP    &trans      &trans      &trans  &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
@@ -411,7 +411,7 @@
         compatible = "zmk,conditional-layers";
 
         l3 {
-            if-layers = <NAV_RLO SYM>;
+            if-layers = <CURSOR_RLO SYM>;
             then-layer = <ADJ>;
         };
     };
