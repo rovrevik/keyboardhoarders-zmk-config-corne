@@ -5,10 +5,10 @@
 
 #define DEF 0
 #define NAV 1
-#define SYM 2
-#define ADJ 3
-#define EXTRA 4
-#define CURSOR_RLO 5
+#define CURSOR 2
+#define SYM 3
+#define ADJ 4
+#define EXTRA 5
 
 / {
     behaviors {
@@ -359,6 +359,16 @@
             >;
         };
 
+         CURSOR {
+            display-name = "Cursor";
+            bindings = <
+&trans      &kp N1  &kp N2    &kp N3    &kp N4      &kp N5      &kp N6  &kp N7      &kp N8      &kp N9      &kp N0      &trans
+&caps_word  &trans  &trans    &kp UP    &trans      &trans      &trans  &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
+&trans      &trans  &kp LEFT  &kp DOWN  &kp RIGHT   &trans      &trans  &kp HOME    &kp PG_UP   &kp PG_DN   &kp END     &trans
+                              &trans    &trans      &trans      &trans  &trans      &trans
+            >;
+        };
+
         SYM {
             display-name = "Symbols";
 
@@ -395,23 +405,13 @@
                                 &trans          &trans           &trans            &trans  &trans  &trans
             >;
         };
-
-         CURSOR_RLO {
-            display-name = "Cursor";
-            bindings = <
-&trans      &kp N1  &kp N2    &kp N3    &kp N4      &kp N5      &kp N6  &kp N7      &kp N8      &kp N9      &kp N0      &trans
-&caps_word  &trans  &trans    &kp UP    &trans      &trans      &trans  &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
-&trans      &trans  &kp LEFT  &kp DOWN  &kp RIGHT   &trans      &trans  &kp HOME    &kp PG_UP   &kp PG_DN   &kp END     &trans
-                              &trans    &trans      &trans      &trans  &trans      &trans
-            >;
-        };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
         l3 {
-            if-layers = <NAV SYM>;
+            if-layers = <CURSOR SYM>;
             then-layer = <ADJ>;
         };
     };
