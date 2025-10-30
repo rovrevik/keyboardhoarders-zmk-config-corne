@@ -162,33 +162,6 @@
             mods = <(MOD_LSFT)>;
         };
 
-        // td_space: td_space_rlo {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     label = "TD_SPACE_RLO";
-        //     #binding-cells = <0>;
-        //     bindings = <&lt SYM SPACE>, <&key_repeat>;
-
-        //     tapping-term-ms = <350>;
-        // };
-
-        // td_ret: td_ret_rlo {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     label = "TD_RET_RLO";
-        //     #binding-cells = <0>;
-        //     bindings = <&kp RET>, <&key_repeat>;
-
-        //     tapping-term-ms = <350>;
-        // };
-
-        // td_bspc: td_bspc_rlo {
-        //     compatible = "zmk,behavior-tap-dance";
-        //     label = "TD_BSPC_RLO";
-        //     #binding-cells = <0>;
-        //     bindings = <&lt NAV BSPC>, <&key_repeat>;
-
-        //     tapping-term-ms = <350>;
-        // };
-
         ht_thumb: ht_thumb_rlo {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_THUMB_RLO";
@@ -346,8 +319,8 @@
             display-name = "Cursor";
             bindings = <
 &trans      &kp N1  &kp N2    &kp N3    &kp N4      &kp N5      &kp N6  &kp N7      &kp N8      &kp N9      &kp N0      &trans
-&caps_word  &trans  &trans    &kp UP    &trans      &trans      &trans  &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
-&trans      &trans  &kp LEFT  &kp DOWN  &kp RIGHT   &trans      &trans  &kp HOME    &kp PG_UP   &kp PG_DN   &kp END     &trans
+&caps_word  &trans  &trans    &trans    &trans      &trans      &trans  &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
+&trans      &trans  &trans    &trans    &trans      &trans      &trans  &kp HOME    &kp PG_UP   &kp PG_DN   &kp END     &trans
                               &trans    &trans      &trans      &trans  &trans      &trans
             >;
         };
@@ -362,10 +335,10 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans      &kp N1  &kp N2    &kp N3        &kp N4           &kp N5           &kp N6   &kp N7  &kp N8  &kp N9  &kp N0  &trans
-&caps_word  &trans  &trans    &kp UP_ARROW  &browsertab      &kp PAGE_UP      &kp N0   &kp N4  &kp N5  &kp N6  &trans  &trans
-&trans      &trans  &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN    &trans   &kp N1  &kp N2  &kp N3  &trans  &trans
-                              &kp LGUI      &trans           &kp SPACE        &kp RET  &trans  &trans
+&trans      &kp N1  &kp N2    &kp N3    &kp N4      &kp N5      &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &trans
+&caps_word  &trans  &trans    &kp UP    &browsertab &kp PG_UP   &kp N0  &kp N4  &kp N5  &kp N6  &trans  &trans
+&trans      &trans  &kp LEFT  &kp DOWN  &kp RIGHT   &kp PG_DN   &trans  &kp N1  &kp N2  &kp N3  &trans  &trans
+                              &kp LGUI  &trans      &kp SPACE   &kp RET &trans  &trans
             >;
         };
 
@@ -379,10 +352,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCL  &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &trans
-&trans  &trans    &trans          &kp UP_ARROW    &trans           &kp GRAVE    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &trans
-&trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp TILDE    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &trans
-                                  &kp LGUI        &trans           &kp SPACE    &kp RET    &trans     &trans
+&trans  &kp EXCL  &kp AT    &kp HASH    &kp DLLR    &kp PRCNT   &kp CARET   &kp AMPS    &kp ASTRK   &kp LPAR    &kp RPAR    &trans
+&trans  &trans    &trans    &trans      &trans      &kp GRAVE   &kp MINUS   &kp EQUAL   &kp BSLH    &kp LBKT    &kp RBKT    &trans
+&trans  &trans    &trans    &trans      &trans      &kp TILDE   &kp UNDER   &kp PLUS    &kp PIPE    &kp LBRC    &kp RBRC    &trans
+                                        &kp LGUI    &trans      &kp SPACE   &kp RET     &trans      &trans
             >;
         };
 
