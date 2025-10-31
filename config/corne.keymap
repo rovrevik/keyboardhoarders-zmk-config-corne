@@ -5,10 +5,10 @@
 
 #define DEF 0
 #define CURSOR 1
-#define NAV 2
-#define SYM 3
-#define ADJ 4
-#define EXTRA 5
+// #define NAV 2
+#define SYM 2
+#define ADJ 3
+#define EXTRA 4
 
 / {
     behaviors {
@@ -300,17 +300,17 @@
         DEF {
             display-name = "Base";
 
-            // | Left Half:                  |      | Right Half:                 |
-            // |  0 |  1 |  2 |  3 |  4 |  5 |      |  6 |  7 |  8 |  9 | 10 | 11 |
-            // | 12 | 13 | 14 | 15 | 16 | 17 |      | 18 | 19 | 20 | 21 | 22 | 23 |
-            // | 24 | 25 | 26 | 27 | 28 | 29 |      | 30 | 31 | 32 | 33 | 34 | 35 |
-            // |    |    |    | 36 | 37 | 38 |      | 39 | 40 | 41 |    |    |    |
+            // | Left Half:                  |  | Right Half:                 |
+            // | 00 | 01 | 02 | 03 | 04 | 05 |  | 06 | 07 | 08 | 09 | 10 | 11 |
+            // | 12 | 13 | 14 | 15 | 16 | 17 |  | 18 | 19 | 20 | 21 | 22 | 23 |
+            // | 24 | 25 | 26 | 27 | 28 | 29 |  | 30 | 31 | 32 | 33 | 34 | 35 |
+            // |              | 36 | 37 | 38 |  | 39 | 40 | 41 |              |
 
-            // -----------------------------------------------------------------------------------------
-            // |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |
-            // |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |
-            // |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |
-            // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
+            // | Left Half:                |  | Right Half:           |
+            // | TAB   | Q | W | E | R | T |  | Y | U | I | O | P |   |
+            // | ESC   | A | S | D | F | G |  | H | J | K | L | ; | ' |
+            // | GRAVE | Z | X | C | V | B |  | N | M | , | . | / |   |
+            // |               |   |   |   |  |   |   |   |           |
 
             bindings = <
 &kp TAB     &kp Q           &kp W           &kp E           &kp R                   &kp T       &kp Y   &kp U               &kp I           &kp O           &kp P               &trans
@@ -322,6 +322,13 @@
 
          CURSOR {
             display-name = "Cursor";
+
+            // | Left Half:            |    | Right Half:                            |
+            // |   | 1 | 2 | 3 | 4 | 5 |    | 6 | 7    | 8       | 9     |     0 |   |
+            // |   |   |   |   |   |   |    |   | LEFT | DOWN    | UP    | RIGHT |   |
+            // |   |   |   |   |   |   |    |   | END  | PG_DOWN | PG_UP | HOME  |   |
+            // |           |   |   |   |    |   |      |         |                   |
+
             bindings = <
 &kp LG(TAB)     &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp N6  &kp N7      &kp N8      &kp N9      &kp N0      &trans
 &caps_word      &trans  &trans  &trans  &trans  &trans      &trans  &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
@@ -330,31 +337,31 @@
             >;
         };
 
-        NAV {
-            display-name = "NavNum";
+//         NAV {
+//             display-name = "NavNum";
 
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
+//             // -----------------------------------------------------------------------------------------
+//             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+//             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+//             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+//             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
-            bindings = <
-&trans      &kp N1  &kp N2    &kp N3    &kp N4      &kp N5          &kp N6  &kp N7  &kp N8  &kp N9  &kp N0  &trans
-&caps_word  &trans  &trans    &kp UP    &browsertab &kp PG_UP       &kp N0  &kp N4  &kp N5  &kp N6  &trans  &trans
-&trans      &trans  &kp LEFT  &kp DOWN  &kp RIGHT   &kp PG_DN       &trans  &kp N1  &kp N2  &kp N3  &trans  &trans
-                              &kp LGUI  &trans      &kp SPACE       &kp RET &trans  &trans
-            >;
-        };
+//             bindings = <
+// &trans  &kp N1  &kp N2    &kp N3       &kp N4           &kp N5           &kp N6   &kp N7        &kp N8        &kp N9        &kp N0  &trans
+// &caps_word  &trans  &trans    &kp UP_ARROW  &browsertab      &kp PAGE_UP      &kp N0   &kp N4  &kp N5        &kp N6  &trans  &trans
+// &trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN    &trans   &kp N1  &kp N2  &kp N3  &trans  &trans
+//                           &kp LGUI      &trans           &kp SPACE        &kp RET  &trans        &trans
+//             >;
+//         };
 
         SYM {
             display-name = "Symbols";
 
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
+            // | Left Half:            |    | Right Half:           |
+            // |   | ! | @ | # | $ | % |    | ^ | & | * | ( | ) |   |
+            // |   |   |   |   |   | ` |    | + | - | \ | [ | ] |   |
+            // |   |   |   |   |   | ~ |    | = | _ | | | { | } |   |
+            // |           |   |   |   |    |   |   |   |           |
 
             bindings = <
 &trans  &kp EXCL  &kp AT    &kp HASH    &kp DLLR    &kp PRCNT       &kp CARET   &kp AMPS    &kp ASTRK   &kp LPAR    &kp RPAR    &trans
@@ -366,6 +373,13 @@
 
         ADJ {
             display-name = "System";
+
+            // | Left Half:                    |    | Right Half:                 |
+            // |   | F1  | F2  | F3  | F4 | F5 |    | F6 | F7 | F8 | F9 | F10 |   |
+            // |   | F11 | F12 |     |    |    |    |    |    |    |    |     |   |
+            // |   | BT0 | BT1 | BT2 | C  | CA |    |    |    |    |    |     |   |
+            // |               |     |    |    |    |    |    |    |              |
+
             bindings = <
 &trans  &kp F1        &kp F2        &kp F3        &kp F4      &kp F5                &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
 &trans  &kp F11       &kp F12       &trans        &trans      &studio_unlock        &trans  &trans  &trans  &trans  &trans       &trans
