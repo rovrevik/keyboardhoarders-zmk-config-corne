@@ -137,11 +137,18 @@
             bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
         };
 
-        caps: caps {
+        // caps: caps {
+        //     compatible = "zmk,behavior-caps-word";
+        //     label = "CAPS";
+        //     #binding-cells = <0>;
+        //     continue-list = <MINUS BACKSPACE>;
+        // };
+
+        capsword: caps_word_rlo {
             compatible = "zmk,behavior-caps-word";
             label = "CAPS";
             #binding-cells = <0>;
-            continue-list = <MINUS BACKSPACE>;
+            continue-list = <MINUS BSPC UNDER>;
         };
 
         paraless: paraless {
@@ -187,7 +194,7 @@
                 <&kp LCTRL>;
         };
 
-        appswitch: appswitch {
+        appswitch: appswitch_rlo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -199,7 +206,7 @@
                 <&kp LGUI>;
         };
 
-        windswitch: windswitch {
+        windswitch: windswitch_rlo {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
@@ -357,7 +364,7 @@
 
             bindings = <
 &appswitch  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp N6  &kp N7      &kp N8      &kp N9      &kp N0      &trans
-&caps_word  &trans  &trans  &trans  &trans  &trans      &trans  &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
+&capsword   &trans  &trans  &trans  &trans  &trans      &trans  &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
 &windswitch &trans  &trans  &trans  &trans  &trans      &trans  &kp HOME    &kp PG_UP   &kp PG_DN   &kp END     &trans
                             &trans  &trans  &trans      &trans  &trans      &trans
             >;
