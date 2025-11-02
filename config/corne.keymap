@@ -268,11 +268,6 @@
         //     key-positions = <28 27>;
         // };
 
-        cmd_c {
-            bindings = <&kp LG(C)>;
-            key-positions = <15 27>;
-        };
-
         // paste {
         //     bindings = <&kp K_PASTE>;
         //     key-positions = <26 27>;
@@ -322,6 +317,61 @@
         //     bindings = <&paragreat>;
         //     key-positions = <20 21>;
         // };
+
+        // required combo because c is under cmd on the home row
+        copy {
+            bindings = <&kp LG(C)>;
+            key-positions = <15 27>;
+        };
+
+        // convenience combos for common shortcuts
+        // these could introduce bad habits
+        // never ever have combos that use the home row modifiers
+        paste {
+            bindings = <&kp LG(V)>;
+            key-positions = <15 28>;
+        };
+
+        cut {
+            bindings = <&kp LG(X)>;
+            key-positions = <15 26>;
+        };
+
+        quit {
+            bindings = <&kp LG(Q)>;
+            key-positions = <15 1>;
+        };
+
+        close {
+            bindings = <&kp LG(W)>;
+            key-positions = <15 2>;
+        };
+
+        refresh {
+            bindings = <&kp LG(R)>;
+            key-positions = <15 4>;
+        };
+
+        save {
+            bindings = <&kp LG(S)>;
+            key-positions = <15 14>;
+        };
+ 
+        // never ever have combos that use the home row modifiers
+        // find {
+        //     bindings = <&kp LG(F)>;
+        //     key-positions = <15 16>;
+        // };
+        
+        find_again {
+            bindings = <&kp LG(G)>;
+            key-positions = <15 17>;
+        };
+        
+        undo {
+            bindings = <&kp LG(Z)>;
+            key-positions = <15 24>;
+        };
     };
 
     //
@@ -361,7 +411,7 @@
             // |   |   |   |   |   |   |    |   | END  | PG_DOWN | PG_UP | HOME  |   |
             // |           |   |   |   |    |   |      |         |                   |
 
-// tab, tilde, copy combos not working
+// TODO appswitch/tab combo not behaving as intended
 
             bindings = <
 &appswitch  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp N6  &kp N7      &kp N8      &kp N9      &kp N0      &trans
