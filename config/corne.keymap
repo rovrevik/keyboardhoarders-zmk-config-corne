@@ -22,18 +22,18 @@
 
 / {
     behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-
-            quick-tap-ms = <180>;
-            global-quick-tap;
-        };
+        // unused in favor of the more advanced hold-tap behaviors below
+        // hm: homerow_mods {
+        //     compatible = "zmk,behavior-hold-tap";
+        //     label = "HOMEROW_MODS";
+        //     #binding-cells = <2>;
+        //     tapping-term-ms = <200>;
+        //     quick_tap_ms = <0>;
+        //     flavor = "tap-preferred";
+        //     bindings = <&kp>, <&kp>;
+        //     quick-tap-ms = <180>;
+        //     global-quick-tap;
+        // };
 
         // Homerow Mods inspired by TailorKey.
         // For advanced tuning of HRM values, see: https://docs.google.com/spreadsheets/d/1ESgObQelyz4lnKlfwLYsmofLJulOMK5RdGBsopLe2o8
@@ -142,12 +142,12 @@
             hold-trigger-on-release;
         };
 
-        para: para {
-            compatible = "zmk,behavior-tap-dance";
-            label = "PARA";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
-        };
+        // para: para {
+        //     compatible = "zmk,behavior-tap-dance";
+        //     label = "PARA";
+        //     #binding-cells = <0>;
+        //     bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+        // };
 
         // caps: caps {
         //     compatible = "zmk,behavior-caps-word";
@@ -163,23 +163,21 @@
             continue-list = <MINUS BSPC UNDER>;
         };
 
-        paraless: paraless {
-            compatible = "zmk,behavior-mod-morph";
-            label = "PARALESS";
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
+        // paraless: paraless {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     label = "PARALESS";
+        //     bindings = <&kp LEFT_PARENTHESIS>, <&kp LESS_THAN>;
+        //     #binding-cells = <0>;
+        //     mods = <(MOD_LSFT)>;
+        // };
 
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
-
-        paragreat: paragreat {
-            compatible = "zmk,behavior-mod-morph";
-            label = "PARAGREAT";
-            bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
-        };
+        // paragreat: paragreat {
+        //     compatible = "zmk,behavior-mod-morph";
+        //     label = "PARAGREAT";
+        //     bindings = <&kp RIGHT_PARENTHESIS>, <&kp GREATER_THAN>;
+        //     #binding-cells = <0>;
+        //     mods = <(MOD_LSFT)>;
+        // };
 
         ht_thumb: ht_thumb_rlo {
             compatible = "zmk,behavior-hold-tap";
@@ -194,17 +192,17 @@
     };
 
     macros {
-        browsertab: browsertab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp TAB>,
-                <&macro_release>,
-                <&kp LCTRL>;
-        };
+        // browsertab: browsertab {
+        //     compatible = "zmk,behavior-macro";
+        //     #binding-cells = <0>;
+        //     bindings =
+        //         <&macro_press>,
+        //         <&kp LCTRL>,
+        //         <&macro_tap>,
+        //         <&kp TAB>,
+        //         <&macro_release>,
+        //         <&kp LCTRL>;
+        // };
 
         appswitch: appswitch_rlo {
             compatible = "zmk,behavior-macro";
@@ -234,6 +232,7 @@
     combos {
         compatible = "zmk,combos";
 
+        // default combos that i don't use but might be useful for reference when adding new ones
         // escape {
         //     bindings = <&kp ESCAPE>;
         //     key-positions = <13 29>;
@@ -363,12 +362,11 @@
             key-positions = <15 4>;
         };
 
-        save {
-            bindings = <&kp LG(S)>;
-            key-positions = <15 14>;
-        };
- 
         // never ever have combos that use the home row modifiers
+        // save {
+        //     bindings = <&kp LG(S)>;
+        //     key-positions = <15 14>;
+        // };
         // find {
         //     bindings = <&kp LG(F)>;
         //     key-positions = <15 16>;
@@ -455,7 +453,7 @@
             // | Left Half:            |    | Right Half:           |
             // | ` | ! | @ | # | $ | % |    | ^ | & | * | ( | ) | - |
             // |   |   |   |   |   |   |    | ` | - | = | [ | ] | \ |
-            // |   |   |   |   |   |   |    | ~ | _ | + | { | } | | |
+            // |   |   |   |   |   |   |    | ~ | _ | + | { | } | | | these are not essential because they are just shifted versions of the above
             // |           |   |   |   |    |   |   |   |           |
 
             bindings = <
@@ -492,6 +490,8 @@
 //                                 &trans          &trans           &trans            &trans  &trans  &trans
 //             >;
 //         };
+
+// TODO: add legend
 
         MOUSE {
             display-name = "Mouse";
