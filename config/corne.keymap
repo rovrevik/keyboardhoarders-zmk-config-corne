@@ -416,18 +416,18 @@
          CURSOR {
             display-name = "Cursor";
 
-            // | Left Half:            |    | Right Half:                            |
-            // |   | 1 | 2 | 3 | 4 | 5 |    | 6 | 7    | 8       | 9     |     0 |   |
-            // |   |   |   |   |   |   |    |   | LEFT | DOWN    | UP    | RIGHT |   |
-            // |   |   |   |   |   |   |    |   | END  | PG_DOWN | PG_UP | HOME  |   |
-            // |           |   |   |   |    |   |      |         |                   |
+            // | Left Half:                |    | Right Half:                            |
+            // |   | 1 | 2 | 3 | 4 | 5     |    | 6 | 7    | 8       | 9     |     0 |   |
+            // |   |   |   |   |   | RET   |    |   | LEFT | DOWN    | UP    | RIGHT |   |
+            // |   |   |   |   |   | SPACE |    |   | END  | PG_DOWN | PG_UP | HOME  |   |
+            // |           |   |   |       |    |   |      |         |                   |
 
-// TODO appswitch/tab combo not behaving as intended
+// TODO: appswitch/tab combo not behaving as intended
 
             bindings = <
 &appswitch  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp N6  &kp N7      &kp N8      &kp N9      &kp N0      &trans
-&capsword   &trans  &trans  &trans  &trans  &trans      &trans  &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
-&windswitch &trans  &trans  &trans  &trans  &trans      &trans  &kp HOME    &kp PG_UP   &kp PG_DN   &kp END     &trans
+&capsword   &trans  &trans  &trans  &trans  &kp RET     &trans  &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
+&windswitch &trans  &trans  &trans  &trans  &kp SPACE   &trans  &kp HOME    &kp PG_UP   &kp PG_DN   &kp END     &trans
                             &trans  &trans  &trans      &trans  &trans      &trans
             >;
         };
