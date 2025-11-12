@@ -145,9 +145,9 @@
         //     continue-list = <MINUS BACKSPACE>;
         // };
 
-        capsword: caps_word_rlo {
+        capsword: capsword_rlo {
             compatible = "zmk,behavior-caps-word";
-            label = "CAPS";
+            display-name = "caps word toggle";
             #binding-cells = <0>;
             continue-list = <MINUS BSPC UNDER>;
         };
@@ -172,7 +172,7 @@
 
         ht_thumb: ht_thumb_rlo {
             compatible = "zmk,behavior-hold-tap";
-            label = "HT_THUMB_RLO";
+            display-name = "home row thumb";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
