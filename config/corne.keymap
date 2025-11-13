@@ -26,9 +26,11 @@
             global-quick-tap;
         };
 
-        // Homerow Mod for the left index finger - TailorKey.
+        // Homerow Mods inspired by TailorKey.
         // For advanced tuning of HRM values, see: https://docs.google.com/spreadsheets/d/1ESgObQelyz4lnKlfwLYsmofLJulOMK5RdGBsopLe2o8
-        hml_i: hml_index_rlo {
+
+        // Homerow Mod for the left index finger
+        hml_i: homerow_left_index {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <340>;
@@ -40,8 +42,8 @@
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the left middle finger - TailorKey
-        hml_m: hml_middle_rlo {
+        // Homerow Mod for the left middle finger
+        hml_m: homerow_left_middle {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <360>;
@@ -53,8 +55,8 @@
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the left ring finger 1 - TailorKey
-        hml_r: hml_ring_rlo {
+        // Homerow Mod for the left ring finger 1
+        hml_r: homerow_left_ring {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <390>;
@@ -66,8 +68,8 @@
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the left pinky - TailorKey
-        hml_p: hml_pinky_rlo {
+        // Homerow Mod for the left pinky
+        hml_p: homerow_left_pinky {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <430>;
@@ -79,8 +81,8 @@
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the right index finger - TailorKey
-        hmr_i: hmr_index_rlo {
+        // Homerow Mod for the right index finger
+        hmr_i: homerow_right_index {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <340>;
@@ -92,8 +94,8 @@
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the right middle finger - TailorKey
-        hmr_m: hmr_middle_rlo {
+        // Homerow Mod for the right middle finger
+        hmr_m: homerow_right_middle {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <360>;
@@ -105,8 +107,8 @@
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the right ring 1 - TailorKey
-        hmr_r: hmr_ring_rlo{
+        // Homerow Mod for the right ring 1
+        hmr_r: homerow_right_ring {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <390>;
@@ -118,8 +120,8 @@
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the right pinky - TailorKey
-        hmr_p: hmr_pinky_rlo {
+        // Homerow Mod for the right pinky
+        hmr_p: homerow_right_pinky {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <430>;
