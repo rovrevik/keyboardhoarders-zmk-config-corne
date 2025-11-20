@@ -39,7 +39,9 @@
         // Homerow Mods inspired by TailorKey.
         // For advanced tuning of HRM values, see: https://docs.google.com/spreadsheets/d/1ESgObQelyz4lnKlfwLYsmofLJulOMK5RdGBsopLe2o8
 
-        // Homerow Mod for the left index finger
+        // TODO: Homerow Mod for the left index finger (inner/g)
+
+        // Homerow Mod for the left index finger (main/outer/f)
         hml_i: homerow_left_index {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -78,7 +80,7 @@
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the left pinky
+        // Homerow Mod for the left pinky (main/inner/a)
         hml_p: homerow_left_pinky {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -91,7 +93,11 @@
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the right index finger
+        // TODO: Homerow Mod for the left pinky (outer/esc/caps)
+
+        // TODO: Homerow Mod for the right index finger (inner/h)
+
+        // Homerow Mod for the right index finger (main/outer/j)
         hmr_i: homerow_right_index {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -130,7 +136,7 @@
             hold-trigger-on-release;
         };
 
-        // Homerow Mod for the right pinky
+        // Homerow Mod for the right pinky (main/inner/;)
         hmr_p: homerow_right_pinky {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -142,6 +148,8 @@
             hold-trigger-key-positions = <LEFT_KEY_POSITIONS>;
             hold-trigger-on-release;
         };
+
+        // TODO: Homerow Mod for the right pinky (outer/')
 
         // para: para {
         //     compatible = "zmk,behavior-tap-dance";
@@ -428,7 +436,9 @@
 
             // deficiencies with left hand only operation: uncomfortable or awkward stretches
             // left hand GUI + TAB
-            // right middle thumb layer and outer left index SPACE and RET
+            // https://github.com/urob/zmk-config?tab=readme-ov-file#swapper
+            // right middle thumb layer and outer left inner index SPACE and RET (only on layers that are triggered by the left hand)
+            // GUI + FSLH to comment out lines
 
             // left pinky TAB is an awkward reach for completion
             // left pinky ESC is an awkward reach for dismissing completions
@@ -439,7 +449,7 @@
 
             bindings = <
 &kp TAB     &kp Q           &kp W           &kp E           &kp R                   &kp T                       &kp Y       &kp U               &kp I           &kp O           &kp P               &kp MINUS
-&kp ESC     &hml_i LCTRL A  &hml_m LALT S   &hml_r LGUI D   &hml_p LSHFT F          &kp G                       &kp H       &hmr_i RSHFT J      &hmr_m RGUI K   &hmr_r RALT L   &hmr_p LCTRL SEMI   &kp SQT
+&kp ESC     &hml_p LCTRL A  &hml_r LALT S   &hml_m LGUI D   &hml_i LSHFT F          &kp G                       &kp H       &hmr_i RSHFT J      &hmr_m RGUI K   &hmr_r RALT L   &hmr_p LCTRL SEMI   &kp SQT
 &kp GRAVE   &kp Z           &kp X           &kp C           &kp V                   &kp B                       &kp N       &kp M               &kp COMMA       &kp DOT         &kp FSLH            &trans
                                             &mo MOUSE       &thumb_ht CURSOR BSPC   &thumb_ht NUM_SYM DEL       &kp RET     &thumb_ht SYM SPACE &mo MOUSE
             >;
