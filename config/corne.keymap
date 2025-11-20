@@ -421,13 +421,24 @@
             // |           |   |   |   |    |   |   |   |           |
 
             // | Left Half:                |  | Right Half:           |
-            // | TAB   | Q | W | E | R | T |  | Y | U | I | O | P |   |
+            // | TAB   | Q | W | E | R | T |  | Y | U | I | O | P | - |
             // | ESC   | A | S | D | F | G |  | H | J | K | L | ; | ' |
             // | GRAVE | Z | X | C | V | B |  | N | M | , | . | / |   |
             // |               |   |   |   |  |   |   |   |           |
 
+            // deficiencies with left hand only operation: uncomfortable or awkward stretches
+            // left hand GUI + TAB
+            // right middle thumb layer and outer left index SPACE and RET
+
+            // left pinky TAB is an awkward reach for completion
+            // left pinky ESC is an awkward reach for dismissing completions
+            // right pink MINUS and UNDER is a long reach but it is deeply ingrained in my muscle memory
+            // rename CURSOR to NAV_NUM
+            // consider hyper or meh on home row index inner column from urob
+            // trigger home row mode shift on cursor layer on long hold
+
             bindings = <
-&kp TAB     &kp Q           &kp W           &kp E           &kp R                   &kp T                       &kp Y       &kp U               &kp I           &kp O           &kp P               &trans
+&kp TAB     &kp Q           &kp W           &kp E           &kp R                   &kp T                       &kp Y       &kp U               &kp I           &kp O           &kp P               &kp MINUS
 &kp ESC     &hml_i LCTRL A  &hml_m LALT S   &hml_r LGUI D   &hml_p LSHFT F          &kp G                       &kp H       &hmr_i RSHFT J      &hmr_m RGUI K   &hmr_r RALT L   &hmr_p LCTRL SEMI   &kp SQT
 &kp GRAVE   &kp Z           &kp X           &kp C           &kp V                   &kp B                       &kp N       &kp M               &kp COMMA       &kp DOT         &kp FSLH            &trans
                                             &mo MOUSE       &thumb_ht CURSOR BSPC   &thumb_ht NUM_SYM DEL       &kp RET     &thumb_ht SYM SPACE &mo MOUSE
@@ -435,21 +446,21 @@
         };
 
          CURSOR {
-            display-name = "Cursor";
+            display-name = "Nav/num";
 
-            // | Left Half:                |    | Right Half:                            |
-            // |   | 1 | 2 | 3 | 4 | 5     |    | 6 | 7    | 8       | 9     |     0 |   |
-            // |   |   |   |   |   | RET   |    |   | LEFT | DOWN    | UP    | RIGHT |   |
-            // |   |   |   |   |   | SPACE |    |   | END  | PG_DOWN | PG_UP | HOME  |   |
-            // |           |   |   |       |    |   |      |         |                   |
+            // | Left Half:                 |    | Right Half:                            |
+            // |   | 1 | 2 | 3 | 4      | 5 |    | 6 | 7    | 8       | 9     |     0 |   |
+            // |   |   |   |   | RET    |   |    |   | LEFT | DOWN    | UP    | RIGHT |   |
+            // |   |   |   |   | SPACE  |   |    |   | END  | PG_DOWN | PG_UP | HOME  |   |
+            // |           |   |        |   |    |   |      |         |                   |
 
 // TODO: appswitch/tab combo not behaving as intended
 
             bindings = <
-&appswitch  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp N6  &kp N7      &kp N8      &kp N9      &kp N0      &trans
-&capsword   &trans  &trans  &trans  &trans  &kp RET     &trans  &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
-&windswitch &trans  &trans  &trans  &trans  &kp SPACE   &trans  &kp HOME    &kp PG_UP   &kp PG_DN   &kp END     &trans
-                            &trans  &trans  &trans      &trans  &trans      &trans
+&appswitch  &kp N1  &kp N2  &kp N3  &kp N4      &kp N5      &kp N6  &kp N7      &kp N8      &kp N9      &kp N0      &trans
+&capsword   &trans  &trans  &trans  &kp RET     &trans      &trans  &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &trans
+&windswitch &trans  &trans  &trans  &kp SPACE   &trans      &trans  &kp HOME    &kp PG_UP   &kp PG_DN   &kp END     &trans
+                            &trans  &trans      &trans      &trans  &trans      &trans
             >;
         };
 
@@ -489,13 +500,13 @@
         };
 
         NUM_SYM {
-            display-name = "Numbers and Symbols";
+            display-name = "Num/Sym";
 
             // | Left Half:                 |    | Right Half:           |
-            // |   |   |   |   |   |        |    | 6 | 7 | 8 | 9 | 0 | - |
-            // |   |   |   |   |   | RET    |    | ` | 4 | 5 | [ | ] | = |
-            // |   |   |   |   |   | SPACE  |    |   | 1 | 2 | 3 |   | \ |
-            // |           |   |   |        |    |   |   |   |           |
+            // |   |   |   |   |        |   |    | 6 | 7 | 8 | 9 | 0 |   |
+            // |   |   |   |   | RET    |   |    | ` | 4 | 5 | [ | ] | = |
+            // |   |   |   |   | SPACE  |   |    |   | 1 | 2 | 3 |   | \ |
+            // |           |   |        |   |    |   |   |   |           |
 
             // | Left Half:                 |    | Right Half:           |
             // |   |   |   |   |   |        |    | ^ | & | * | ( | ) | _ |  
@@ -506,10 +517,10 @@
             // | ` | - | = | \ |
 
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans      &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS
-&trans  &trans  &trans  &trans  &trans  &kp RET     &kp GRAVE   &kp N4      &kp N5      &kp LBKT    &kp RBKT    &kp EQUAL
-&trans  &trans  &trans  &trans  &trans  &kp SPACE   &trans      &kp N1      &kp N2      &kp N3      &trans      &kp BSLH
-                        &trans  &trans  &trans      &trans      &trans      &trans
+&trans  &trans  &trans  &trans  &trans      &trans  &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &trans
+&trans  &trans  &trans  &trans  &kp RET     &trans  &kp GRAVE   &kp N4      &kp N5      &kp LBKT    &kp RBKT    &kp EQUAL
+&trans  &trans  &trans  &trans  &kp SPACE   &trans  &trans      &kp N1      &kp N2      &kp N3      &trans      &kp BSLH
+                        &trans  &trans      &trans  &trans      &trans      &trans
             >;
         };
 
