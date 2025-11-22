@@ -20,6 +20,8 @@
 
 #define RIGHT_KEY_POSITIONS 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41
 #define LEFT_KEY_POSITIONS 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38
+#define LHYPER LC(LA(LG(LS(LSHFT))))
+#define LMEH LC(LA(LS(LCTRL)))
 
 / {
     behaviors {
@@ -38,8 +40,6 @@
 
         // Homerow Mods inspired by TailorKey.
         // For advanced tuning of HRM values, see: https://docs.google.com/spreadsheets/d/1ESgObQelyz4lnKlfwLYsmofLJulOMK5RdGBsopLe2o8
-
-        // TODO: Homerow Mod for the left index finger (inner/g)
 
         // Homerow Mod for the left index finger (main/outer/f)
         hml_i: homerow_left_index {
@@ -93,10 +93,6 @@
             hold-trigger-on-release;
         };
 
-        // TODO: Homerow Mod for the left pinky (outer/esc/caps)
-
-        // TODO: Homerow Mod for the right index finger (inner/h)
-
         // Homerow Mod for the right index finger (main/outer/j)
         hmr_i: homerow_right_index {
             compatible = "zmk,behavior-hold-tap";
@@ -148,8 +144,6 @@
             hold-trigger-key-positions = <LEFT_KEY_POSITIONS>;
             hold-trigger-on-release;
         };
-
-        // TODO: Homerow Mod for the right pinky (outer/')
 
         // para: para {
         //     compatible = "zmk,behavior-tap-dance";
@@ -448,10 +442,10 @@
             // trigger home row mode shift on cursor layer on long hold
 
             bindings = <
-&kp TAB     &kp Q           &kp W           &kp E           &kp R                   &kp T                       &kp Y       &kp U               &kp I           &kp O           &kp P               &kp MINUS
-&kp ESC     &hml_p LCTRL A  &hml_r LALT S   &hml_m LGUI D   &hml_i LSHFT F          &kp G                       &kp H       &hmr_i RSHFT J      &hmr_m RGUI K   &hmr_r RALT L   &hmr_p LCTRL SEMI   &kp SQT
-&kp GRAVE   &kp Z           &kp X           &kp C           &kp V                   &kp B                       &kp N       &kp M               &kp COMMA       &kp DOT         &kp FSLH            &trans
-                                            &mo MOUSE       &thumb_ht CURSOR BSPC   &thumb_ht NUM_SYM DEL       &kp RET     &thumb_ht SYM SPACE &mo MOUSE
+&kp TAB         &kp Q           &kp W           &kp E           &kp R                   &kp T                       &kp Y       &kp U               &kp I           &kp O           &kp P               &kp MINUS
+&hml_p LMEH ESC &hml_p LCTRL A  &hml_r LALT S   &hml_m LGUI D   &hml_i LSHFT F          &hml_i LHYPER G             &kp H       &hmr_i RSHFT J      &hmr_m RGUI K   &hmr_r RALT L   &hmr_p LCTRL SEMI   &kp SQT
+&kp GRAVE       &kp Z           &kp X           &kp C           &kp V                   &kp B                       &kp N       &kp M               &kp COMMA       &kp DOT         &kp FSLH            &trans
+                                                &mo MOUSE       &thumb_ht CURSOR BSPC   &thumb_ht NUM_SYM DEL       &kp RET     &thumb_ht SYM SPACE &mo MOUSE
             >;
         };
 
