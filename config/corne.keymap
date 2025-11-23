@@ -234,23 +234,28 @@
         appswitch: appswitch {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             bindings =
                 <&macro_press>,
                 <&kp LGUI>,
+                <&macro_pause_for_release>,
                 <&macro_tap>,
                 <&kp TAB>,
                 <&macro_release>,
                 <&kp LGUI>;
-        };
+           };
 
         windswitch: windswitch {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
+            wait-ms = <40>;
+            tap-ms = <40>;
             bindings =
                 <&macro_press>,
                 <&kp LGUI>,
                 <&macro_tap>,
-                <&kp TILDE>,
+                <&kp GRAVE>,
                 <&macro_release>,
                 <&kp LGUI>;
         };
