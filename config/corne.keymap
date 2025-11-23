@@ -408,6 +408,12 @@
             bindings = <&kp LG(Z)>;
             key-positions = <15 24>;
         };
+
+        combo_toggle_gui {
+            timeout-ms = <100>;
+            bindings = <&kt LGUI>;
+            key-positions = <15 37>;
+        };
     };
 
     //
