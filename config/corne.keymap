@@ -40,6 +40,8 @@
 
         // Homerow Mods inspired by TailorKey.
         // For advanced tuning of HRM values, see: https://docs.google.com/spreadsheets/d/1ESgObQelyz4lnKlfwLYsmofLJulOMK5RdGBsopLe2o8
+        // These behaviors are not really homerow mods in the strict sense, but they are designed to be used on the home row keys. 
+        // They can be used on any key, but they have optimized timings for the fingers used for the home row keys.
 
         // Homerow Mod for the left index finger (main/outer/f)
         hml_i: homerow_left_index {
