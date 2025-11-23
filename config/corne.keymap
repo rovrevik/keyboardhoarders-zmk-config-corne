@@ -442,10 +442,10 @@
             // trigger home row mode shift on cursor layer on long hold
 
             bindings = <
-&kp TAB         &kp Q           &kp W           &kp E           &kp R                   &kp T                       &kp Y       &kp U               &kp I           &kp O           &kp P               &kp MINUS
-&hml_p LMEH ESC &hml_p LCTRL A  &hml_r LALT S   &hml_m LGUI D   &hml_i LSHFT F          &hml_i LHYPER G             &kp H       &hmr_i RSHFT J      &hmr_m RGUI K   &hmr_r RALT L   &hmr_p LCTRL SEMI   &kp SQT
-&kp GRAVE       &kp Z           &kp X           &kp C           &kp V                   &kp B                       &kp N       &kp M               &kp COMMA       &kp DOT         &kp FSLH            &trans
-                                                &mo MOUSE       &thumb_ht CURSOR BSPC   &thumb_ht NUM_SYM DEL       &kp RET     &thumb_ht SYM SPACE &mo MOUSE
+&kp TAB             &kp Q           &kp W           &kp E           &kp R                   &kp T                       &kp Y       &kp U               &kp I           &kp O           &kp P               &kp MINUS
+&hml_p LMEH ESC     &hml_p LCTRL A  &hml_r LALT S   &hml_m LGUI D   &hml_i LSHFT F          &hml_i LHYPER G             &kp H       &hmr_i RSHFT J      &hmr_m RGUI K   &hmr_r RALT L   &hmr_p LCTRL SEMI   &kp SQT
+&hml_p GLOBE GRAVE  &kp Z           &kp X           &kp C           &kp V                   &kp B                       &kp N       &kp M               &kp COMMA       &kp DOT         &kp FSLH            &trans
+                                                    &mo MOUSE       &thumb_ht CURSOR BSPC   &thumb_ht NUM_SYM DEL       &kp RET     &thumb_ht SYM SPACE &mo MOUSE
             >;
         };
 
