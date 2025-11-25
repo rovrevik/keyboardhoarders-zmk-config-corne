@@ -457,7 +457,7 @@
             bindings = <
 &kp TAB             &kp Q           &kp W           &kp E           &kp R                   &kp T                       &kp Y       &kp U               &kp I           &kp O           &kp P               &kp MINUS
 &hml_p LMEH ESC     &hml_p LCTRL A  &hml_r LALT S   &hml_m LGUI D   &hml_i LSHFT F          &hml_i LHYPER G             &kp H       &hmr_i RSHFT J      &hmr_m RGUI K   &hmr_r RALT L   &hmr_p LCTRL SEMI   &kp SQT
-&hml_p GLOBE GRAVE  &kp Z           &kp X           &kp C           &kp V                   &kp B                       &kp N       &kp M               &kp COMMA       &kp DOT         &kp FSLH            &trans
+&hml_p GLOBE GRAVE  &kp Z           &kp X           &kp C           &kp V                   &kp B                       &kp N       &kp M               &kp COMMA       &kp DOT         &kp FSLH            &kp BSLH
                                                     &mo MOUSE       &thumb_ht CURSOR BSPC   &thumb_ht NUM_SYM DEL       &kp RET     &thumb_ht SYM SPACE &mo MOUSE
             >;
         };
@@ -510,7 +510,7 @@
             bindings = <
 // &trans      &sft_tg EXCL N1 &sft_tg AT N2   &sft_tg HASH N3 &sft_tg DLLR N4 &sft_tg PRCNT N5    &sft_tg CARET N6    &sft_tg AMPS N7 &sft_tg ASTRK N8    &sft_tg LPAR N9 &sft_tg RPAR N0 &trans
 &trans      &kp EXCL        &kp AT          &kp HASH        &kp DLLR        &kp PRCNT           &kp CARET           &kp AMPS        &kp ASTRK           &kp LPAR        &kp RPAR        &trans
-&trans      &trans          &trans          &trans          &trans          &trans              &kp GRAVE           &kp MINUS       &kp EQUAL           &kp LBKT        &kp RBKT        &kp BSLH
+&trans      &trans          &trans          &trans          &trans          &trans              &kp GRAVE           &kp MINUS       &kp EQUAL           &kp LBKT        &kp RBKT        &trans
 &trans      &trans          &trans          &trans          &trans          &trans              &trans              &trans          &trans              &trans          &trans          &trans
                                             &trans          &trans          &trans              &trans              &trans          &trans
             >;
@@ -536,7 +536,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans              &trans  &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &trans
 &trans  &trans  &trans  &trans  &hml_i LSHFT RET    &trans  &kp GRAVE   &kp N4      &kp N5      &kp LBKT    &kp RBKT    &kp EQUAL
-&trans  &trans  &trans  &trans  &kp SPACE           &trans  &trans      &kp N1      &kp N2      &kp N3      &trans      &kp BSLH
+&trans  &trans  &trans  &trans  &kp SPACE           &trans  &trans      &kp N1      &kp N2      &kp N3      &trans      &trans
                         &trans  &trans              &trans  &trans      &trans      &trans
             >;
         };
