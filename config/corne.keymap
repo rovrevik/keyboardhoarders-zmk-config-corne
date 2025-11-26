@@ -404,11 +404,10 @@
         //     bindings = <&kp LG(F)>;
         //     key-positions = <15 16>;
         // };
-        
-        find_again {
-            bindings = <&kp LG(G)>;
-            key-positions = <15 17>;
-        };
+        // find_again {
+        //     bindings = <&kp LG(G)>;
+        //     key-positions = <15 17>;
+        // };
         
         undo {
             bindings = <&kp LG(Z)>;
