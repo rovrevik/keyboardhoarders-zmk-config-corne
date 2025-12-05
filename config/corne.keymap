@@ -12,6 +12,13 @@
 #define MOUSE 5
 // #define EXTRA 4
 
+// Key positions for combos
+#define LGUI_KEY_POSITION 15
+#define LTHM_KEY_POSITION 37
+// timeout default 50ms
+// zmk/app/dts/bindings/zmk,combos.yaml
+#define COMBO_TIMEOUT_MS 100
+
 // | Left Half:                  |  | Right Half:                 |
 // | 00 | 01 | 02 | 03 | 04 | 05 |  | 06 | 07 | 08 | 09 | 10 | 11 |
 // | 12 | 13 | 14 | 15 | 16 | 17 |  | 18 | 19 | 20 | 21 | 22 | 23 |
@@ -22,6 +29,27 @@
 #define LEFT_KEY_POSITIONS 0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38
 #define LHYPER LC(LA(LG(LS(LSHFT))))
 #define LMEH LC(LA(LS(LCTRL)))
+
+// homerow timings
+#define HRM_I_TAPPING_TERM_MS 340
+#define HRM_I_QUICK_TAP_MS 450
+#define HRM_I_REQUIRE_PRIOR_IDLE_MS 250
+
+#define HRM_M_TAPPING_TERM_MS 360
+#define HRM_M_QUICK_TAP_MS 450
+#define HRM_M_REQUIRE_PRIOR_IDLE_MS 300
+
+#define HRM_R_TAPPING_TERM_MS 390
+#define HRM_R_QUICK_TAP_MS 450
+#define HRM_R_REQUIRE_PRIOR_IDLE_MS 300
+
+#define HRM_P_TAPPING_TERM_MS 430
+#define HRM_P_QUICK_TAP_MS 450
+#define HRM_P_REQUIRE_PRIOR_IDLE_MS 300
+
+// thumb row layer timings
+#define THUMB_TAPPING_TERM_MS 300
+#define THUMB_QUICK_TAP_MS 400
 
 / {
     behaviors {
@@ -48,11 +76,11 @@
         hml_i: homerow_left_index {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <340>;
+            tapping-term-ms = <HRM_I_TAPPING_TERM_MS>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <450>;
-            require-prior-idle-ms = <250>;
+            quick-tap-ms = <HRM_I_QUICK_TAP_MS>;
+            require-prior-idle-ms = <HRM_I_REQUIRE_PRIOR_IDLE_MS>;
             hold-trigger-key-positions = <RIGHT_KEY_POSITIONS>;
             hold-trigger-on-release;
         };
@@ -61,11 +89,11 @@
         hml_m: homerow_left_middle {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <360>;
+            tapping-term-ms = <HRM_M_TAPPING_TERM_MS>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <450>;
-            require-prior-idle-ms = <300>;
+            quick-tap-ms = <HRM_M_QUICK_TAP_MS>;
+            require-prior-idle-ms = <HRM_M_REQUIRE_PRIOR_IDLE_MS>;
             hold-trigger-key-positions = <RIGHT_KEY_POSITIONS>;
             hold-trigger-on-release;
         };
@@ -74,11 +102,11 @@
         hml_r: homerow_left_ring {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <390>;
+            tapping-term-ms = <HRM_R_TAPPING_TERM_MS>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <450>;
-            require-prior-idle-ms = <300>;
+            quick-tap-ms = <HRM_R_QUICK_TAP_MS>;
+            require-prior-idle-ms = <HRM_R_REQUIRE_PRIOR_IDLE_MS>;
             hold-trigger-key-positions = <RIGHT_KEY_POSITIONS>;
             hold-trigger-on-release;
         };
@@ -87,11 +115,11 @@
         hml_p: homerow_left_pinky {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <430>;
+            tapping-term-ms = <HRM_P_TAPPING_TERM_MS>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <450>;
-            require-prior-idle-ms = <300>;
+            quick-tap-ms = <HRM_P_QUICK_TAP_MS>;
+            require-prior-idle-ms = <HRM_P_REQUIRE_PRIOR_IDLE_MS>;
             hold-trigger-key-positions = <RIGHT_KEY_POSITIONS>;
             hold-trigger-on-release;
         };
@@ -100,11 +128,11 @@
         hmr_i: homerow_right_index {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <340>;
+            tapping-term-ms = <HRM_I_TAPPING_TERM_MS>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <450>;
-            require-prior-idle-ms = <250>;
+            quick-tap-ms = <HRM_I_QUICK_TAP_MS>;
+            require-prior-idle-ms = <HRM_I_REQUIRE_PRIOR_IDLE_MS>;
             hold-trigger-key-positions = <LEFT_KEY_POSITIONS>;
             hold-trigger-on-release;
         };
@@ -113,11 +141,11 @@
         hmr_m: homerow_right_middle {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <360>;
+            tapping-term-ms = <HRM_M_TAPPING_TERM_MS>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <450>;
-            require-prior-idle-ms = <300>;
+            quick-tap-ms = <HRM_M_QUICK_TAP_MS>;
+            require-prior-idle-ms = <HRM_M_REQUIRE_PRIOR_IDLE_MS>;
             hold-trigger-key-positions = <LEFT_KEY_POSITIONS>;
             hold-trigger-on-release;
         };
@@ -126,11 +154,11 @@
         hmr_r: homerow_right_ring {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <390>;
+            tapping-term-ms = <HRM_R_TAPPING_TERM_MS>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <450>;
-            require-prior-idle-ms = <300>;
+            quick-tap-ms = <HRM_R_QUICK_TAP_MS>;
+            require-prior-idle-ms = <HRM_R_REQUIRE_PRIOR_IDLE_MS>;
             hold-trigger-key-positions = <LEFT_KEY_POSITIONS>;
             hold-trigger-on-release;
         };
@@ -139,11 +167,11 @@
         hmr_p: homerow_right_pinky {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <430>;
+            tapping-term-ms = <HRM_P_TAPPING_TERM_MS>;
             bindings = <&kp>, <&kp>;
             flavor = "tap-preferred";
-            quick-tap-ms = <450>;
-            require-prior-idle-ms = <300>;
+            quick-tap-ms = <HRM_P_QUICK_TAP_MS>;
+            require-prior-idle-ms = <HRM_P_REQUIRE_PRIOR_IDLE_MS>;
             hold-trigger-key-positions = <LEFT_KEY_POSITIONS>;
             hold-trigger-on-release;
         };
@@ -190,9 +218,9 @@
             display-name = "thumb row hold-tap";
             bindings = <&mo>, <&kp>;
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <THUMB_TAPPING_TERM_MS>;
             flavor = "balanced";
-            quick-tap-ms = <400>;
+            quick-tap-ms = <THUMB_QUICK_TAP_MS>;
         };
 
         // support numbers when shift is held in the SYM layer
@@ -363,61 +391,71 @@
 
         // required combo because c is under cmd on the home row
         copy {
+            // the default timeout-ms works fine here
             bindings = <&kp LG(C)>;
-            key-positions = <15 27>;
+            key-positions = <LGUI_KEY_POSITION 27>;
         };
 
         // convenience combos for common shortcuts
         // these could introduce bad habits
         // never ever have combos that use the home row modifiers
         paste {
+            timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(V)>;
-            key-positions = <15 28>;
+            key-positions = <LGUI_KEY_POSITION 28>;
         };
 
         cut {
+            timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(X)>;
-            key-positions = <15 26>;
+            key-positions = <LGUI_KEY_POSITION 26>;
         };
 
         quit {
+            timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(Q)>;
-            key-positions = <15 1>;
+            key-positions = <LGUI_KEY_POSITION 1>;
         };
 
         close {
+            timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(W)>;
-            key-positions = <15 2>;
+            key-positions = <LGUI_KEY_POSITION 2>;
         };
 
         refresh {
+            timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(R)>;
-            key-positions = <15 4>;
+            key-positions = <LGUI_KEY_POSITION 4>;
         };
 
         // never ever have combos that use the home row modifiers
         // save {
+        //     timeout-ms = <COMBO_TIMEOUT_MS>;
         //     bindings = <&kp LG(S)>;
-        //     key-positions = <15 14>;
+        //     key-positions = <LGUI_KEY_POSITION 14>;
         // };
         // find {
+        //     timeout-ms = <COMBO_TIMEOUT_MS>;
         //     bindings = <&kp LG(F)>;
-        //     key-positions = <15 16>;
+        //     key-positions = <LGUI_KEY_POSITION 16>;
         // };
         // find_again {
+        //     timeout-ms = <COMBO_TIMEOUT_MS>;
         //     bindings = <&kp LG(G)>;
-        //     key-positions = <15 17>;
+        //     key-positions = <LGUI_KEY_POSITION 17>;
         // };
         
         undo {
+            timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kp LG(Z)>;
-            key-positions = <15 24>;
+            key-positions = <LGUI_KEY_POSITION 24>;
         };
 
         combo_toggle_gui {
-            timeout-ms = <100>;
+            timeout-ms = <COMBO_TIMEOUT_MS>;
             bindings = <&kt LGUI>;
-            key-positions = <15 37>;
+            key-positions = <LGUI_KEY_POSITION LTHM_KEY_POSITION>;
         };
     };
 
@@ -438,7 +476,7 @@
             // | Left Half:                |  | Right Half:           |
             // | TAB   | Q | W | E | R | T |  | Y | U | I | O | P | - |
             // | ESC   | A | S | D | F | G |  | H | J | K | L | ; | ' |
-            // | GRAVE | Z | X | C | V | B |  | N | M | , | . | / |   |
+            // | GRAVE | Z | X | C | V | B |  | N | M | , | . | / | \ |
             // |               |   |   |   |  |   |   |   |           |
 
             // deficiencies with left hand only operation: uncomfortable or awkward stretches
