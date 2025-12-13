@@ -31,6 +31,10 @@
 #define LMEH LC(LA(LS(LCTRL)))
 
 // homerow timings
+// For advanced tuning of HRM values, see: ZMK HRM Best Practice Values [SUNAKU]
+// https://docs.google.com/spreadsheets/d/1ESgObQelyz4lnKlfwLYsmofLJulOMK5RdGBsopLe2o8
+// started at "normal" and moving towards "faster".
+
 #define HRM_I_TAPPING_TERM_MS 340
 #define HRM_I_QUICK_TAP_MS 450
 #define HRM_I_REQUIRE_PRIOR_IDLE_MS 250
@@ -67,10 +71,9 @@
         // };
 
         // Homerow Mods inspired by TailorKey.
-        // For advanced tuning of HRM values, see: https://docs.google.com/spreadsheets/d/1ESgObQelyz4lnKlfwLYsmofLJulOMK5RdGBsopLe2o8
         // These behaviors are not really homerow mods in the strict sense, but they are designed to be used on the home row keys. 
         // They can be used on any key, but they have optimized timings for the fingers used for the home row keys.
-        // Using hyper and meh in addition to the four standard homerow mod keys.
+        // Using hyper and meh in addition to the four standard homerow mod keys from urob.
 
         // Homerow Mod for the left index finger (main/outer/f)
         hml_i: homerow_left_index {
@@ -489,7 +492,6 @@
             // left pinky ESC is an awkward reach for dismissing completions
             // right pink MINUS and UNDER is a long reach but it is deeply ingrained in my muscle memory
             // rename CURSOR to NAV_NUM
-            // consider hyper or meh on home row index inner column from urob
             // trigger home row mode shift on cursor layer on long hold
 
             bindings = <
